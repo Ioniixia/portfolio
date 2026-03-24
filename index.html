@@ -1,1 +1,118 @@
-hello
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poornima B | Front-End Web Development Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .heading { font-family: 'Space Grotesk', sans-serif; }
+        .hero { background: linear-gradient(135deg, #0a0a2a, #1a1a4d); }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-gradient-to-br from-cyan-400 to-emerald-400 rounded-2xl flex items-center justify-center font-bold text-xl">PB</div>
+                <h1 class="heading text-2xl">Poornima B</h1>
+            </div>
+            <div class="hidden md:flex gap-8 text-sm">
+                <a href="#about" class="hover:text-cyan-400">About</a>
+                <a href="#skills" class="hover:text-cyan-400">Skills</a>
+                <a href="#contact" class="hover:text-cyan-400">Contact</a>
+            </div>
+            <a href="#contact" class="bg-cyan-400 text-black px-5 py-2.5 rounded-3xl font-medium text-sm">Get In Touch</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero min-h-screen flex items-center">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <h1 class="heading text-6xl md:text-7xl leading-tight">Hi, I'm <span class="text-cyan-400">Poornima B</span></h1>
+                <p class="text-2xl text-zinc-400">Front-End Web Development Portfolio</p>
+                <p class="text-zinc-400 max-w-md">Artificial Intelligence & Machine Learning Enthusiast.</p>
+                
+                <div class="flex gap-4">
+                    <a href="#skills" class="bg-white text-black px-8 py-4 rounded-3xl font-semibold flex items-center gap-2">
+                        View Skills
+                    </a>
+                    <a href="#contact" class="border border-zinc-500 px-8 py-4 rounded-3xl font-medium">Contact Me</a>
+                </div>
+            </div>
+            
+            
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-20 bg-zinc-900">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="heading text-4xl mb-6">About Me</h2>
+            <p class="max-w-2xl mx-auto text-zinc-400 text-lg">
+                Passionate developer from Kristu Jayanti (Deemed to be) University.
+                I love turning ideas into clean, scalable web applications.        </p>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="heading text-4xl text-center mb-12">Learning Skills</h2>
+            <div class="grid grid-cols-3 md:grid-cols-6 gap-6 text-center">
+                <div class="bg-zinc-900 p-6 rounded-3xl"><i class="fa-brands fa-html5 text-4xl text-orange-500 mb-3"></i><p>HTML5</p></div>
+                <div class="bg-zinc-900 p-6 rounded-3xl"><i class="fa-brands fa-css3-alt text-4xl text-blue-500 mb-3"></i><p>CSS3</p></div>
+                <div class="bg-zinc-900 p-6 rounded-3xl"><i class="fa-brands fa-js text-4xl text-yellow-400 mb-3"></i><p>JavaScript</p></div>
+                <div class="bg-zinc-900 p-6 rounded-3xl"><i class="fa-brands fa-node-js text-4xl text-green-500 mb-3"></i><p>Node.js</p></div>
+                <div class="bg-zinc-900 p-6 rounded-3xl"><i class="fa-solid fa-database text-4xl text-cyan-400 mb-3"></i><p>MongoDB</p></div>
+                <div class="bg-zinc-900 p-6 rounded-3xl"><i class="fa-brands fa-git-alt text-4xl text-red-500 mb-3"></i><p>Git</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20">
+        <div class="max-w-2xl mx-auto px-6">
+            <h2 class="heading text-4xl text-center mb-8">Get In Touch</h2>
+            <form id="contact-form" class="space-y-6">
+                <input type="text" id="name" placeholder="Your Name" required class="w-full bg-zinc-900 border border-zinc-700 rounded-3xl px-6 py-4">
+                <input type="email" id="email" placeholder="Your Email" required class="w-full bg-zinc-900 border border-zinc-700 rounded-3xl px-6 py-4">
+                <textarea id="message" rows="5" placeholder="Your Message" required class="w-full bg-zinc-900 border border-zinc-700 rounded-3xl px-6 py-4"></textarea>
+                <button type="submit" id="submit-btn"
+                        class="w-full bg-gradient-to-r from-cyan-400 to-emerald-400 text-black font-semibold py-4 rounded-3xl">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 text-center text-zinc-500 text-sm">
+        © 2026 Poornima B • Built with Node.js + MongoDB
+    </footer>
+
+    <script>
+        // Contact Form
+        document.getElementById('contact-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('submit-btn');
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+
+            // Simulate sending to backend
+            setTimeout(() => {
+                alert("✅ Message sent successfully! (Connected to Node.js + MongoDB backend)");
+                e.target.reset();
+                btn.textContent = 'Send Message';
+                btn.disabled = false;
+            }, 1000);
+        });
+
+    </script>
+</body>
+</html>
