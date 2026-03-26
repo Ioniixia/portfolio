@@ -73,7 +73,7 @@ app.post('/api/contact', async (req, res) => {
 
 // Serve frontend for all other routes (Express 5 wildcard syntax)
 app.get('/{*any}', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname,'public', 'index.html'));
 });
 
 app.listen(PORT, () => {
